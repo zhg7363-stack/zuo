@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Digital Scrapbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Jeju+Hallasan&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="scrapbook-app" data-view="landing">
+      <section class="landing-page" aria-label="01 hero landing page">
+        <button class="hero-journal" id="openJournal" aria-label="Open journal">
+          <img src="assets/figma-reference/figma-reference/first-01.png" alt="Closed scrapbook journal" />
+        </button>
+      </section>
+
+      <section class="editor-page" aria-label="02 interactive journal editor">
+        <aside class="material-rail" aria-label="Journal materials">
+          <button class="tool-button" id="backToCover" aria-label="Return to cover" title="Return to cover">Cover</button>
+          <button class="tool-button primary-tool text-tool" id="addTextButton" aria-label="Add text" title="Add text">T</button>
+          <div class="material-list" id="materialList"></div>
+          <div class="upload-slots" id="uploadSlots" aria-label="Upload image slots"></div>
+          <input class="file-input" id="fileInput" type="file" accept="image/*" multiple />
+        </aside>
+
+        <section class="workspace" id="workspace">
+          <div class="background-zoom-control" aria-label="Background size controls">
+            <button class="background-zoom-button" id="backgroundZoomOutButton" type="button" aria-label="Shrink background" title="Shrink background">-</button>
+            <span class="background-zoom-value" id="backgroundZoomValue">100%</span>
+            <button class="background-zoom-button" id="backgroundZoomInButton" type="button" aria-label="Enlarge background" title="Enlarge background">+</button>
+          </div>
+          <div class="journal-stage" id="journalStage" aria-label="Scrapbook drop zone">
+            <div class="object-layer" id="objectLayer"></div>
+          </div>
+        </section>
+      </section>
+
+      <menu class="context-menu" id="contextMenu">
+        <button data-action="size-small">Small</button>
+        <button data-action="size-medium">Medium</button>
+        <button data-action="size-large">Large</button>
+        <button data-action="scale-up">Scale up</button>
+        <button data-action="scale-down">Scale down</button>
+        <button data-action="rotate-left">Rotate -15°</button>
+        <button data-action="rotate-right">Rotate +15°</button>
+        <button data-action="rotate-hard-left">Rotate -45°</button>
+        <button data-action="rotate-hard-right">Rotate +45°</button>
+        <button data-action="reset">Reset transform</button>
+        <button data-action="delete">Delete</button>
+      </menu>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
